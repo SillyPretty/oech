@@ -43,66 +43,55 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 18),
-              Container(
-                width: 362,
-                padding: EdgeInsets.zero,
-                child: const S2TextFieldWidget(
-                  textTitle: 'Email Address',
-                  textTitleColor: Color.fromRGBO(167, 167, 167, 1),
-                  textSize: 14,
-                  hintText: '***********@mail.com',
-                ),
+              const S2TextFieldWidget(
+                textTitle: 'Email Address',
+                textTitleColor: Color.fromRGBO(167, 167, 167, 1),
+                textSize: 14,
+                hintText: '***********@mail.com',
               ),
-              Container(
-                width: 362,
-                padding: EdgeInsets.zero,
-                child: S2TextFieldPasswordWidget(
-                  controller: TextEditingController(),
-                  textTitle: 'Password',
-                  textTitleColor: Color.fromRGBO(167, 167, 167, 1),
-                  textSize: 14,
-                  hintText: '**********',
-                ),
+              S2TextFieldPasswordWidget(
+                controller: TextEditingController(),
+                textTitle: 'Password',
+                textTitleColor: Color.fromRGBO(167, 167, 167, 1),
+                textSize: 14,
+                hintText: '**********',
               ),
-              Container(
-                padding: EdgeInsets.zero,
-                child: Row(
-                  children: [
-                    //Кнопка соглашения
-                    Checkbox(
-                      activeColor: const Color.fromARGB(255, 5, 96, 250),
-                      value: checkedValue,
-                      onChanged: (newValue) {
-                        setState(() {
-                          checkedValue = newValue!;
-                        });
-                      },
+              Row(
+                children: [
+                  //Кнопка соглашения
+                  Checkbox(
+                    activeColor: const Color.fromARGB(255, 5, 96, 250),
+                    value: checkedValue,
+                    onChanged: (newValue) {
+                      setState(() {
+                        checkedValue = newValue!;
+                      });
+                    },
+                  ),
+                  //Пользовательское соглашение:
+                  const Text(
+                    'Remember password ',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromRGBO(167, 167, 167, 1),
                     ),
-                    //Пользовательское соглашение:
-                    const Text(
-                      'Remember password ',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: Color.fromRGBO(167, 167, 167, 1),
-                      ),
+                  ),
+                  Spacer(),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/forgotpass');
+                    },
+                    child: Text(
+                      'forgot password',
+                      style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 5, 96, 250)),
                     ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/forgotpass');
-                      },
-                      child: Text(
-                        'forgot password',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 5, 96, 250)),
-                      ),
-                    ),
-                    SizedBox(width: 20),
-                  ],
-                ),
+                  ),
+                  SizedBox(width: 20),
+                ],
               ),
               const SizedBox(height: 200),
               Column(
@@ -123,8 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.only(left: 80),
+              Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,

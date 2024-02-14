@@ -15,20 +15,10 @@ class Onboarding4Page extends StatelessWidget {
               // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const SizedBox(
-                  height: 80,
+                  height: 60,
                 ),
-                Container(
-                  width: 430,
-                  height: 300,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image:
-                              AssetImage('assets/images/s1_Onboarding 4.png'),
-                          fit: BoxFit.cover)),
-                ),
-                const SizedBox(
-                  height: 58,
-                ),
+                Image.asset('assets/images/s1_Onboarding 4.png'),
+                const SizedBox(height: 50),
                 const Text(
                   'Flexible Payment',
                   textAlign: TextAlign.center,
