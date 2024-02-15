@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:oech_app001/widgets/btn_widget.dart';
 import 'package:oech_app001/widgets/s2_text_field_password_widget.dart';
-import 'package:oech_app001/widgets/s2_text_field_widget.dart';
+import 'package:oech_app001/widgets/s2_text_field_widget2.dart';
 
 class LoginPage extends StatefulWidget {
-  // static const routeName = '/log_in-page';
   const LoginPage({super.key});
 
   @override
@@ -13,7 +12,38 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  var buttonColor = Color.fromRGBO(167, 167, 167, 1);
+  @override
+  void initState() {
+    super.initState();
+    loginController.addListener(() {
+      if (loginController.text != '' && passwordController.text != '') {
+        buttonColor = Color.fromARGB(255, 5, 96, 250);
+      } else {
+        buttonColor = Color.fromRGBO(167, 167, 167, 1);
+      }
+      setState(() {});
+    });
+    passwordController.addListener(() {
+      if (loginController.text != '' && passwordController.text != '') {
+        buttonColor = Color.fromARGB(255, 5, 96, 250);
+      } else {
+        buttonColor = Color.fromRGBO(167, 167, 167, 1);
+      }
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    passwordController.removeListener(() {});
+    loginController.removeListener(() {});
+    super.dispose();
+  }
+
   bool checkedValue = false;
+  final loginController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,14 +73,15 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 18),
-              const S2TextFieldWidget(
+              S2TextFieldWidget2(
+                controller: loginController,
                 textTitle: 'Email Address',
                 textTitleColor: Color.fromRGBO(167, 167, 167, 1),
                 textSize: 14,
                 hintText: '***********@mail.com',
               ),
               S2TextFieldPasswordWidget(
-                controller: TextEditingController(),
+                controller: passwordController,
                 textTitle: 'Password',
                 textTitleColor: Color.fromRGBO(167, 167, 167, 1),
                 textSize: 14,
@@ -85,31 +116,30 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                       'forgot password',
                       style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 5, 96, 250)),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color.fromARGB(255, 5, 96, 250),
+                      ),
                     ),
                   ),
                   SizedBox(width: 20),
                 ],
               ),
               const SizedBox(height: 200),
-              Column(
-                children: [
-                  SizedBox(
-                    width: 362,
-                    child: ButtonWidget(
-                      buttonName: 'Log in ',
-                      buttonColor: const Color.fromRGBO(167, 167, 167, 1),
-                      onTap: () {
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                          '/main-page',
-                          (Route<dynamic> route) => false,
-                        );
-                      },
-                    ),
-                  ),
-                ],
+              SizedBox(
+                width: double.infinity,
+                child: ButtonWidget(
+                  buttonName: 'Log in ',
+                  buttonColor: buttonColor,
+                  onTap: () {
+                    if (buttonColor == Color.fromARGB(255, 5, 96, 250)) {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        '/main-page',
+                        (Route<dynamic> route) => false,
+                      );
+                    }
+                  },
+                ),
               ),
               const SizedBox(height: 20),
               Center(
@@ -142,18 +172,22 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 10),
                     const Column(
                       children: [
-                        Text('or sign in using',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromRGBO(167, 167, 167, 1))),
+                        Text(
+                          'or sign in using',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromRGBO(167, 167, 167, 1),
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 5),
                     const Image(
-                        image: AssetImage('assets/images/s2_icon_google.png'),
-                        height: 16,
-                        width: 16),
+                      image: AssetImage('assets/images/s2_icon_google.png'),
+                      height: 16,
+                      width: 16,
+                    ),
                     const SizedBox(height: 20),
                   ],
                 ),

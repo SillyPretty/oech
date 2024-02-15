@@ -30,7 +30,10 @@ class _SendPageState extends State<SendPackage> {
         shadowColor: Colors.white,
         elevation: 4.0,
         centerTitle: true,
-        title: AppBarWidget(text: 'Track'),
+        title: AppBarWidget(
+          text: 'Track',
+          isBack: false,
+        ),
       ),
       body: SingleChildScrollView(
           child: Container(

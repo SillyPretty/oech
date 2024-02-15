@@ -16,7 +16,10 @@ class WalletPage extends StatelessWidget {
         shadowColor: Colors.white,
         elevation: 4.0,
         centerTitle: true,
-        title: AppBarWidget(text: 'Wallet'),
+        title: AppBarWidget(
+          text: 'Wallet',
+          isBack: false,
+        ),
       ),
       body: SingleChildScrollView(
         child: Center(

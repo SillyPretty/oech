@@ -37,6 +37,30 @@ List<MessageClass> listMessage = [
 ];
 
 class _LsChatWidgetState extends State<LsChatWidget> {
+  @override
+  void dispose() {
+    listMessage = [
+      MessageClass(
+        message:
+            'Hello, Please check your phone, I just booked you to deliver my stuff',
+        type: '1',
+      ),
+      MessageClass(
+        message: 'Thank you for contacting me.',
+        type: '2',
+      ),
+      MessageClass(
+        message: 'I am already on my way to the pick up venue.',
+        type: '2',
+      ),
+      MessageClass(
+        message: 'Alright, I wll be waiting',
+        type: '1',
+      ),
+    ];
+    super.dispose();
+  }
+
   final messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {

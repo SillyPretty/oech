@@ -16,7 +16,10 @@ class ChatsPage extends StatelessWidget {
         shadowColor: Colors.white,
         elevation: 4.0,
         centerTitle: true,
-        title: AppBarWidget(text: 'Chats'),
+        title: AppBarWidget(
+          text: 'Chats',
+          isBack: true,
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -8,83 +8,77 @@ class S2TextFieldWidget extends StatelessWidget {
   final double textSize;
   final TextInputType inputType;
 
-  const S2TextFieldWidget(
-      {super.key,
-      required this.textTitle,
-      required this.hintText,
-      required this.textTitleColor,
-      required this.textSize,
-      this.isObsText = false,
-      this.inputType = TextInputType.text,});
+  const S2TextFieldWidget({
+    super.key,
+    required this.textTitle,
+    required this.hintText,
+    required this.textTitleColor,
+    required this.textSize,
+    this.isObsText = false,
+    this.inputType = TextInputType.text,
+  });
 
 //TEXT WIDGET
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 85,
-      width: 342,
-      child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: 342,
-                  child: Text(
-                    textTitle,
-                    style: const TextStyle(
-                        fontSize: 14,
-                        color: Color.fromRGBO(167, 167, 167, 1),
-                        fontWeight: FontWeight.w500),
-                  ),
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Column(
+            children: [
+              SizedBox(
+                width: 342,
+                child: Text(
+                  textTitle,
+                  style: const TextStyle(
+                      fontSize: 14,
+                      color: Color.fromRGBO(167, 167, 167, 1),
+                      fontWeight: FontWeight.w500),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          const SizedBox(height: 5),
-          SizedBox(
-            height: 44,
-            width: 342,
-            child: TextFormField(
-              style: const TextStyle(
+        ),
+        const SizedBox(height: 5),
+        TextFormField(
+          style: const TextStyle(
+            fontSize: 14,
+            color: Color.fromRGBO(58, 58, 58, 1),
+          ),
+          cursorColor: const Color.fromRGBO(167, 167, 167, 1),
+          obscureText: isObsText,
+          keyboardType: inputType,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+            border: InputBorder.none,
+            fillColor: Colors.transparent,
+            enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(4),
+              ),
+              borderSide:
+                  BorderSide(color: Color.fromRGBO(167, 167, 167, 1), width: 1),
+            ),
+            focusedBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+              borderSide: BorderSide(
+                color: Color.fromRGBO(167, 167, 167, 1),
+                width: 1,
+              ),
+            ),
+            hintStyle: const TextStyle(color: Colors.transparent),
+            hintText: hintText,
+            labelText: hintText,
+            labelStyle: const TextStyle(
                 fontSize: 14,
-                color: Color.fromRGBO(58, 58, 58, 1),
-              ),
-              cursorColor: const Color.fromRGBO(167, 167, 167, 1),
-              obscureText: isObsText,
-              keyboardType: inputType,
-              decoration: InputDecoration(
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                border: InputBorder.none,
-                fillColor: Colors.transparent,
-                enabledBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(4),
-                  ),
-                  borderSide: BorderSide(
-                      color: Color.fromRGBO(167, 167, 167, 1), width: 1),
-                ),
-                focusedBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(4)),
-                  borderSide: BorderSide(
-                    color: Color.fromRGBO(167, 167, 167, 1),
-                    width: 1,
-                  ),
-                ),
-                hintStyle: const TextStyle(color: Colors.transparent),
-                hintText: hintText,
-                labelText: hintText,
-                labelStyle: const TextStyle(
-                    fontSize: 14,
-                    color: Color.fromRGBO(207, 207, 207, 1),
-                    fontWeight: FontWeight.w500),
-                filled: true,
-              ),
-            ),
+                color: Color.fromRGBO(207, 207, 207, 1),
+                fontWeight: FontWeight.w500),
+            filled: true,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -142,6 +136,3 @@ class PasswordField extends StatelessWidget {
     );
   }
 }
-
-
-

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget {
+  final isBack;
   final text;
   const AppBarWidget({
     super.key,
     required this.text,
+    required this.isBack,
   });
 
   @override
@@ -12,12 +14,14 @@ class AppBarWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        InkWell(
-          onTap: () {
-            Navigator.of(context).pop();
-          },
-          child: Image.asset('assets/images/s5_icon_arrow-left.png'),
-        ),
+        isBack
+            ? InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: Image.asset('assets/images/s5_icon_arrow-left.png'),
+              )
+            : SizedBox(width: 24),
         Text(
           text,
           style: TextStyle(

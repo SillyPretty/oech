@@ -101,90 +101,171 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 7),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 166,
-                      height: 88,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 6,
-                        vertical: 20,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                          color: const Color(0xffEC8000),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: 166,
+                        height: 88,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 20,
                         ),
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        image: const DecorationImage(
-                          image:
-                              AssetImage('assets/images/s5__back__card2.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: const Text(
-                        'Tech Meetup coming soon',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 166,
-                      height: 88,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 6,
-                        vertical: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                          color: const Color(0xffEC8000),
-                        ),
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        image: const DecorationImage(
-                          image:
-                              AssetImage('assets/images/s5__back__card3.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Center(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 5, vertical: 5),
-                          decoration: BoxDecoration(
-                            color: Colors.red.withOpacity(0.7),
-                            border: Border.all(
-                              width: 1,
-                            ),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(26),
-                            ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: const Color(0xffEC8000),
                           ),
-                          child: const Text(
-                            'Love \n Revolution',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color(0xffEBBC2E),
-                              fontSize: 16,
-                            ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          image: const DecorationImage(
+                            image:
+                                AssetImage('assets/images/s5__back__card2.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: const Text(
+                          'Tech Meetup coming soon',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(width: 20),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: 166,
+                        height: 88,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: const Color(0xffEC8000),
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          image: const DecorationImage(
+                            image:
+                                AssetImage('assets/images/s5__back__card3.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        child: Center(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 5, vertical: 5),
+                            decoration: BoxDecoration(
+                              color: Colors.red.withOpacity(0.7),
+                              border: Border.all(
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(26),
+                              ),
+                            ),
+                            child: const Text(
+                              'Love \n Revolution',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xffEBBC2E),
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: 166,
+                        height: 88,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 20,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: const Color(0xffEC8000),
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          image: const DecorationImage(
+                            image:
+                                AssetImage('assets/images/s5__back__card4.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: 166,
+                        height: 88,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 20,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: const Color(0xffEC8000),
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          image: const DecorationImage(
+                            image:
+                                AssetImage('assets/images/s5__back__card5.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: 166,
+                        height: 88,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 6,
+                          vertical: 20,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 2,
+                            color: const Color(0xffEC8000),
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          image: const DecorationImage(
+                            image:
+                                AssetImage('assets/images/s5__back__card6.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 20),
               const Align(
@@ -199,7 +280,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 9),
-              Wrap(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
                     onTapDown: (details) {
@@ -221,7 +303,6 @@ class _HomePageState extends State<HomePage> {
                           'Our customer care service line is available from 8 -9pm week days and 9 - 5 weekends - tap to call us today',
                     ),
                   ),
-                  const SizedBox(width: 20),
                   GestureDetector(
                     onTapDown: (details) {
                       peremBackColor2 = const Color(0xff0560FA);
@@ -242,6 +323,11 @@ class _HomePageState extends State<HomePage> {
                           'Request for a driver to pick up or deliver your package for you',
                     ),
                   ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   GestureDetector(
                     onTapDown: (details) {
                       peremBackColor3 = const Color(0xff0560FA);
@@ -262,7 +348,6 @@ class _HomePageState extends State<HomePage> {
                           'To fund your wallet is as easy as ABC, make use of our fast technology and top-up your wallet today',
                     ),
                   ),
-                  const SizedBox(width: 20),
                   GestureDetector(
                     onTapDown: (details) {
                       peremBackColor4 = const Color(0xff0560FA);

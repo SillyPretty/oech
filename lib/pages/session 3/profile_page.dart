@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:oech_app001/widgets/app_bar.dart';
@@ -13,17 +14,20 @@ class ProfilePage extends StatefulWidget {
 var balance = '10.712:00';
 
 class _ProfilePageState extends State<ProfilePage> {
+  var switchBtn = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         shadowColor: Colors.white,
         elevation: 4.0,
         centerTitle: true,
-        title: AppBarWidget(text: 'Profile'),
+        title: AppBarWidget(
+          text: 'Profile',
+          isBack: false,
+        ),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -42,9 +46,10 @@ class _ProfilePageState extends State<ProfilePage> {
                       height: 60,
                       width: 60,
                       decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  AssetImage('assets/images/s5_ava_Ken.png'))),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/s5_ava_Ken.png'),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: 10,
@@ -62,20 +67,23 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         RichText(
                           text: TextSpan(
-                              text: 'Current balance: ',
-                              style: TextStyle(
-                                color: Color(0xff3a3a3a),
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
+                            text: 'Current balance: ',
+                            style: TextStyle(
+                              color: Color(0xff3a3a3a),
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: balance,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xff0560fa),
+                                ),
                               ),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: balance,
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Color(0xff0560fa)))
-                              ]),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -107,24 +115,36 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: 30,
               ),
               const SizedBox(height: 10),
-              Container(
-                height: 26,
-                width: 341,
-                child: const Text('Enable dark Mode',
-                    style: TextStyle(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  children: [
+                    const Text(
+                      'Enable dark Mode',
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(58, 58, 58, 1))),
+                        color: Color.fromRGBO(58, 58, 58, 1),
+                      ),
+                    ),
+                    Spacer(),
+                    CupertinoSwitch(
+                      activeColor: Colors.blue,
+                      value: switchBtn,
+                      onChanged: (bool value) {
+                        switchBtn = !switchBtn;
+                        setState(() {});
+                      },
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 10),
-              GestureDetector(
-                onTap: () {},
-                child: const ProofileWidget(
-                  title: 'Edit Profile',
-                  subTitle: 'Name, phone no, address, email ...',
-                  icon: Icons.account_circle_outlined,
-                  iconColor: Color.fromRGBO(58, 58, 58, 1),
-                ),
+              const ProofileWidget(
+                title: 'Edit Profile',
+                subTitle: 'Name, phone no, address, email ...',
+                icon: Icons.account_circle_outlined,
+                iconColor: Color.fromRGBO(58, 58, 58, 1),
               ),
               const ProofileWidget(
                 title: 'Statemets & Reports',
@@ -132,11 +152,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 icon: Icons.task,
                 iconColor: Color.fromRGBO(58, 58, 58, 1),
               ),
-              const ProofileWidget(
-                title: 'Notification Settings',
-                subTitle: 'mute, unmute, set location & tracking setting',
-                icon: Icons.notifications_none_outlined,
-                iconColor: Color.fromRGBO(58, 58, 58, 1),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/notification');
+                },
+                child: const ProofileWidget(
+                  title: 'Notification Settings',
+                  subTitle: 'mute, unmute, set location & tracking setting',
+                  icon: Icons.notifications_none_outlined,
+                  iconColor: Color.fromRGBO(58, 58, 58, 1),
+                ),
               ),
               const ProofileWidget(
                 title: 'Card & Bank account settings',
@@ -156,11 +181,55 @@ class _ProfilePageState extends State<ProfilePage> {
                 icon: Icons.add_box_outlined,
                 iconColor: Color.fromRGBO(58, 58, 58, 1),
               ),
-              const ProofileWidget(
-                title: 'Log Out',
-                subTitle: '',
-                icon: Icons.logout_outlined,
-                iconColor: Color.fromRGBO(237, 58, 58, 1),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/signin',
+                    (Route<dynamic> route) => false,
+                  );
+                },
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  child: Container(
+                    // width: 342,
+                    height: 68,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.15),
+                          spreadRadius: 0,
+                          blurRadius: 5,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.logout_outlined,
+                          color: Colors.red,
+                        ),
+                        const SizedBox(width: 10),
+                        Text(
+                          'Log Out',
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromRGBO(58, 58, 58, 1),
+                          ),
+                        ),
+                        Spacer(),
+                        Icon(Icons.keyboard_arrow_right_sharp),
+                        SizedBox(width: 10),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
