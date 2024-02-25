@@ -108,6 +108,7 @@ class _MainPageState extends State<MainPage> {
         onTap: (index) {
           setState(() {
             selectedIndex = index;
+            
           });
         },
         selectedItemColor: const Color.fromRGBO(5, 96, 205, 1),

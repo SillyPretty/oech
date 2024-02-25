@@ -23,6 +23,7 @@ class Onboarding4Page extends StatelessWidget {
                 'Flexible Payment',
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                  fontFamily: 'Roboto',
                   fontWeight: FontWeight.w700,
                   fontSize: 33,
                   color: Color.fromARGB(255, 5, 96, 250),
@@ -37,6 +38,7 @@ class Onboarding4Page extends StatelessWidget {
                   'Different modes of payment either before and after delivery without stress',
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                    fontFamily: 'Roboto',
                       fontWeight: FontWeight.w400,
                       fontSize: 21,
                       color: Color.fromARGB(255, 58, 58, 58)),
@@ -70,6 +72,7 @@ class Onboarding4Page extends StatelessWidget {
                         'Skip',
                         style: TextStyle(
                           fontSize: 16,
+                          fontFamily: 'Roboto',
                           fontWeight: FontWeight.w700,
                           color: Color.fromARGB(255, 5, 96, 250),
                         ),
@@ -93,6 +96,7 @@ class Onboarding4Page extends StatelessWidget {
                       child: const Text(
                         'Next',
                         style: TextStyle(
+                          fontFamily: 'Roboto',
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,

@@ -22,6 +22,7 @@ class Onboarding1Page extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
+                    fontFamily: 'Roboto',
                     fontSize: 33,
                     color: Color.fromARGB(255, 5, 96, 250),
                   ),
@@ -34,6 +35,7 @@ class Onboarding1Page extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
+                        fontFamily: 'Roboto',
                         fontSize: 21,
                         color: Color.fromARGB(255, 58, 58, 58)),
                   ),
@@ -59,6 +61,7 @@ class Onboarding1Page extends StatelessWidget {
                         child: const Text(
                           'Skip',
                           style: TextStyle(
+                            fontFamily: 'Roboto',
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             color: const Color.fromARGB(255, 5, 96, 250),
@@ -85,6 +88,7 @@ class Onboarding1Page extends StatelessWidget {
                         child: const Text(
                           'Next',
                           style: TextStyle(
+                            fontFamily: 'Roboto',
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
                             color: Colors.white,

@@ -38,6 +38,7 @@ class Onboarding3Page extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
+                        fontFamily: 'Roboto',
                         fontSize: 21,
                         color: Color.fromARGB(255, 58, 58, 58),
                       ),
@@ -60,6 +61,7 @@ class Onboarding3Page extends StatelessWidget {
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(
+                          fontFamily: 'Roboto',
                           fontSize: 16,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
@@ -74,6 +76,7 @@ class Onboarding3Page extends StatelessWidget {
                       text: TextSpan(
                           text: 'Already have an account?',
                           style: const TextStyle(
+                            fontFamily: 'Roboto',
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                               color: Color.fromARGB(255, 167, 167, 167)),
@@ -81,6 +84,7 @@ class Onboarding3Page extends StatelessWidget {
                         TextSpan(
                             text: 'Sign in',
                             style: const TextStyle(
+                              fontFamily: 'Roboto',
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color: Color.fromARGB(255, 5, 96, 250)),

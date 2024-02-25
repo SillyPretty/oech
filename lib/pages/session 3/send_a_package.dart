@@ -114,12 +114,12 @@ class _SendPageState extends State<SendPackage> {
                   height: 25,
                 ),
                 Row(
-                  children: [
-                    // Container(
-                    //   height: 18,
-                    //   width: 18,
-                    //   child: SvgPicture.asset('assets/images/s4_pack_detailes.svg'),),
-                    // SizedBox(width: 10,),
+                 children: [
+                    Container(
+                      height: 18,
+                      width: 18,
+                      child: SvgPicture.asset('assets/images/s4_pack_detailes.svg'),),
+                    SizedBox(width: 10,),
                     Text(
                       'Package Details',
                       textAlign: TextAlign.left,
@@ -159,7 +159,7 @@ class _SendPageState extends State<SendPackage> {
                   children: [
                     Container(
                       width: 160,
-                      height: 80,
+                      height: 88,
                       decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -178,7 +178,7 @@ class _SendPageState extends State<SendPackage> {
                             color: Colors.white,
                           ),
                           Text(
-                            'Instant delivery (Paymet.)',
+                            'Instant delivery',
                             style: TextStyle(
                               color: Color(0xffffffff),
                               fontWeight: FontWeight.w500,
@@ -190,7 +190,7 @@ class _SendPageState extends State<SendPackage> {
                     ),
                     Container(
                       width: 160,
-                      height: 80,
+                      height: 88,
                       decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -205,14 +205,14 @@ class _SendPageState extends State<SendPackage> {
                         children: [
                           IconButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/notification');
+                              Navigator.pushNamed(context, '/receipt-page');
                             },
                             icon: SvgPicture.asset(
                                 'assets/images/s4_calendar.svg'),
                             color: Color(0xffa7a7a7),
                           ),
                           Text(
-                            'Scheduled delivery (Notif.)',
+                            'Scheduled delivery',
                             style: TextStyle(
                               color: Color(0xffa7a7a7),
                               fontWeight: FontWeight.w500,
@@ -234,4 +234,3 @@ class _SendPageState extends State<SendPackage> {
   }
 }
 
-class CustomAppBar {}

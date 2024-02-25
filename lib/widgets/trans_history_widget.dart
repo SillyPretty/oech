@@ -14,10 +14,11 @@ class TransactionWidget extends StatelessWidget {
     required this.day,
     });
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 60,
+        height: 64,
         padding: EdgeInsets.all(9),
         margin: EdgeInsets.all(3) ,
         decoration: BoxDecoration(

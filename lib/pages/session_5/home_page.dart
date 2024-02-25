@@ -3,7 +3,6 @@ import 'package:oech_app001/widgets/card_home_widget.dart';
 import 'package:oech_app001/widgets/search_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
-  static const routeName = '/home-page';
   const HomePage({super.key});
 
   @override

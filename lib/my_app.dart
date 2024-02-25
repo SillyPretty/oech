@@ -9,8 +9,11 @@ import 'package:oech_app001/pages/session%202/new_password_page.dart';
 import 'package:oech_app001/pages/session%202/signUp_page.dart';
 import 'package:oech_app001/pages/session%203/main_page.dart';
 import 'package:oech_app001/pages/session%203/profile_page.dart';
+import 'package:oech_app001/pages/session%203/receipt_page.dart';
 import 'package:oech_app001/pages/session%203/send_a_package.dart';
 import 'package:oech_app001/pages/session%203/notification_page.dart';
+import 'package:oech_app001/pages/session%203/transaction_successful_page.dart';
+import 'package:oech_app001/pages/session%203/transation_succesful_2.dart';
 import 'package:oech_app001/pages/session%204/wallet_page.dart';
 import 'package:oech_app001/pages/session_5/chats_page.dart';
 import 'package:oech_app001/pages/session_5/home_page.dart';
@@ -22,7 +25,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      theme: ThemeData(
+        fontFamily: 'Schyler',
+      ),
+      initialRoute: '/transation1',
       routes: {
         // 1 session
         '/': (context) => const Onboarding1Page(),
@@ -35,10 +41,13 @@ class MyApp extends StatelessWidget {
         '/forgotpass': (context) => const ForgotPasswoprdPage(),
         '/newpass': (context) => const NewPasswordPage(),
         // 3 session
+        '/receipt-page': (context) => const ReceiptPage(),
         '/main-page': (context) => const MainPage(),
         '/profile': (context) => const ProfilePage(),
         '/sendpack': (context) => const SendPackage(),
         '/notification': (context) => const NotificationPage(),
+        '/transation1': (context) => const TransactionSucces1(),
+        '/transaction': (context) => const TransactionSucces(),
         // 4 session
         '/wall': (context) => const WalletPage(),
         // 5 session

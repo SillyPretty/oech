@@ -4,9 +4,17 @@ import 'package:oech_app001/widgets/app_bar.dart';
 import 'package:oech_app001/widgets/top_up_button.dart';
 import 'package:oech_app001/widgets/trans_history_widget.dart';
 
-class WalletPage extends StatelessWidget {
+class WalletPage extends StatefulWidget {
   const WalletPage({super.key});
 
+  @override
+  State<WalletPage> createState() => _ProfilePageState();
+}
+
+var balance = '10.712:00';
+
+class _ProfilePageState extends State<WalletPage> {
+  var switchBtn = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +35,7 @@ class WalletPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: 50,
+                height: 40,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -38,9 +46,10 @@ class WalletPage extends StatelessWidget {
                       height: 60,
                       width: 60,
                       decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  AssetImage('assets/images/s5_ava_Ken.png'))),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/s5_ava_Ken.png'),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: 10,
@@ -58,38 +67,53 @@ class WalletPage extends StatelessWidget {
                         ),
                         RichText(
                           text: TextSpan(
-                              text: 'Current balance: ',
-                              style: TextStyle(
-                                color: Color(0xff3a3a3a),
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
+                            text: 'Current balance: ',
+                            style: TextStyle(
+                              color: Color(0xff3a3a3a),
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: balance,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xff0560fa),
+                                ),
                               ),
-                              children: <TextSpan>[
-                                TextSpan(
-                                    text: 'N10,712:00',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w500,
-                                        color: Color(0xff0560fa)))
-                              ]),
+                            ],
+                          ),
                         )
                       ],
                     ),
+                    Spacer(),
+                    InkWell(
+                      onTap: () {
+                        if (balance == '10.712:00') {
+                          balance = '***';
+                        } else if (balance == '***') {
+                          balance = '10.712:00';
+                        }
+                        setState(() {});
+                      },
+                      child: Container(
+                        height: 24,
+                        width: 24,
+                        child: balance == '***'
+                            ? SvgPicture.asset('assets/images/eye_on.svg')
+                            : SvgPicture.asset('assets/images/s4_eye.svg'),
+                      ),
+                    ),
                     SizedBox(
-                      width: 80,
-                    ),
-                    Container(
-                      height: 24,
-                      width: 24,
-                      child: SvgPicture.asset('assets/images/s4_eye.svg'),
-                    ),
+                      width: 25,
+                    )
                   ],
                 ),
               ),
               SizedBox(
                 height: 30,
               ),
-
               // серая плашка Top Up
 
               Container(
@@ -207,6 +231,7 @@ class WalletPage extends StatelessWidget {
           ),
         ),
       ),
+
       // BOTTOM BAR
     );
   }

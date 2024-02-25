@@ -50,6 +50,7 @@ class _ForgotPasswoprdPageState extends State<ForgotPasswoprdPage> {
             children: <Widget>[
               const Text('Forgot Password',
                   style: TextStyle(
+                    fontFamily: 'Roboto',
                     fontSize: 24,
                     color: Color.fromRGBO(58, 58, 58, 1),
                     fontWeight: FontWeight.w500,
@@ -57,6 +58,7 @@ class _ForgotPasswoprdPageState extends State<ForgotPasswoprdPage> {
               const Text(
                 'Enter your email address',
                 style: TextStyle(
+                  fontFamily: 'Roboto',
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                   color: Color.fromRGBO(167, 167, 167, 1),
@@ -77,6 +79,7 @@ class _ForgotPasswoprdPageState extends State<ForgotPasswoprdPage> {
               Column(
                 children: [
                   SizedBox(
+                    width: 380,
                     child: buttonPressed == false
                         ? ButtonWidget(
                             buttonName: 'Send OTP',
